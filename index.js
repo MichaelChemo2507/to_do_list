@@ -10,6 +10,9 @@ const path = require('path');
 const {json} = require("express");
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(express.static(path.join(__dirname, "css")));
+app.use(express.static(path.join(__dirname, "js")));
+
 app.set("view engine","ejs");
 app.get('/',(req,res)=> {
     res.render("mainPage",{pageTitle:"הוספת קטגוריה"});
