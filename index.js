@@ -5,14 +5,21 @@ app.use(express.json());
 let db_M = require('./database');
 global.db_pool = db_M.pool;
 
-let Name = "Ploni";
 
 const path = require('path');
 const {json} = require("express");
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(express.static(path.join(__dirname, "css")));
+app.use(express.static(path.join(__dirname, "js")));
+
+app.set("view engine","ejs");
 app.get('/',(req,res)=> {
-    let q = `INSERT INTO \`categories\` (\`Category_Name\`) VALUES('${Name}')`;
+    res.render("mainPage",{pageTitle:"הוספת קטגוריה"});
+});
+app.get('/Add',(req,res)=> {
+let Name = req.body.name;
+    let q = `INSERT INTO categories(Category_Name) VALUES('${Name}')`;
     db_pool.query(q,function (err,rows,fields){
         if (err){
             res.status(500).json({message:err});
@@ -22,35 +29,25 @@ app.get('/',(req,res)=> {
     })
 });
 app.post('/LIST',(req, res)=>{
-    let q = `SELECT * FROM \`categories\``;
+    let q = `SELECT * FROM categories`;
     db_pool.query(q,function (err,rows,fields){
         if (err){
             res.status(500).json({message:err});
         }else{
-            res.send(json(rows));
+            res.status(200).json(rows);
         }
     })
 })
-app.post('CREATE',(req,res)=>{
-let CategoriesLine ={
-
-};
-let MissionsLin={
-
-    };
-let OwnersLine = {
-
-};
-
-});
-app.post('CREATE',(req,res)=>{
-
-});
-app.post('UPDATE',(req,res)=>{
-
-});
-app.post('DELETE',(req,res)=>{
-
+app.delete(`/DELETE/:id`,(req,res)=>{
+    let id = req.params.id;
+    let q = `DELETE * FROM categories WHERE ID = ${id}`;
+    db_pool.query(q,function (err,rows,fields){
+        if (err){
+            res.status(500).json({message:err});
+        }else{
+            res.status(200).json(rows);
+        }
+    })
 });
 app.listen(port,()=>{
     console.log(`now listening on port ${port}`);
