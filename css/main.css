@@ -1,3 +1,28 @@
-body{
-    background-color: aqua;
+.wrapper {
+    width: 1000px;
+    height: 1800px;
+    margin: 0 auto;
+}
+table {
+    margin: 25% auto;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: right;
+    padding: 8px;
+}
+thead tr {
+    background-color: gray;
+}
+
+tbody tr:nth-child(even) {
+    background-color: lightgray;
+}
+tbody tr:hover {
+    background-color: yellow;
 }
