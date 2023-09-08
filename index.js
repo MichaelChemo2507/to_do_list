@@ -10,7 +10,11 @@ const path = require('path');
 const {json} = require("express");
 
 const car_rtr = require('./routes/cat_R');
+const task_rtr = require('./routes/task_R');
 app.use('/Categories',car_rtr);
+app.use('/Tasks',task_rtr);
+
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "css")));
 app.use(express.static(path.join(__dirname, "js")));
