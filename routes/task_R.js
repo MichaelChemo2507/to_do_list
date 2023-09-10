@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 module.exports = router;
 
+
+router.get('/',(req,res)=> {
+    res.render("tasks_data",{pageTitle:"הצגת משימות"});
+});
 router.post('/Add',(req,res)=> {
 let rowObj ={Missions_Name,Owner_Id,Due_Date,Done_Date,Category_Id,Creator_Id}=req.body;
 

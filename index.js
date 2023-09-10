@@ -24,6 +24,7 @@ app.get('/',(req,res)=> {
     res.render("mainPage",{pageTitle:"הוספת קטגוריה"});
 });
 
+
 app.listen(port,()=>{
     console.log(`now listening on port ${port} http://localhost:2506/`);
 })
