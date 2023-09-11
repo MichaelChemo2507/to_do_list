@@ -1,14 +1,12 @@
-<form action="/Tasks/Add" >
-<input type="text" placeholder="task Name..." name="Missions_Name"><br>
-<input type="text" placeholder="Owner Id..." name="Owner_Id"><br>
-<input type="text" placeholder="Due Date..." name="Due_Date"><br>
-<input type="text" placeholder="Done Date..." name="Done_Date"><br>
+<form action="http://localhost:2506/Tasks/Add" method="post" >
+<input type="text" placeholder="task Name..." id="Missions_Name"  name="Missions_Name"   ><br>
+<input type="text" placeholder="Owner Id..."  id="Owner_Id"  name="Owner_Id"        ><br>
+<input type="text" placeholder="Due Date..."  id="Due_Date"  name="Due_Date"        ><br>
+<input type="text" placeholder="Done Date..." id="Done_Date"  name="Done_Date"       ><br>
 <select name="Category_Id" id="Category_Id">
 </select><br>
-    <input type="text" placeholder="Done Date..." name="Done_Date"><br>
-
-<input type="text" placeholder="Creator Id..." name="Creator_Id"><br>
-<input type="button">
+<input type="text" placeholder="Creator Id..." id="Creator_Id" name="Creator_Id"><br>
+<button>Add</button>
 </form>
 <table>
     <thead>
@@ -16,6 +14,7 @@
         <th> Edit </th>
         <th> ID </th>
         <th> שם מטלה </th>
+        <th> מספר מנהל </th>
         <th> תחילת עבודה </th>
         <th> מועד הגשה </th>
         <th> קטגוריה </th>
