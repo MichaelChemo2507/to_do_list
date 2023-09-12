@@ -6,6 +6,9 @@ router.get('/',(req,res)=> {
     res.render("mainPage",{pageTitle:"הוספת קטגוריה"});
 });
 
-router.get('/addTasks',(req,res)=> {
-    res.render("tasks_data",{pageTitle:"הוספת מטלה"});
+router.get('/Tasks',(req,res)=> {
+    res.render("mainTasks",{pageTitle:"הוספת מטלה"});
+});
+router.get('/owner',(req,res)=> {
+    res.render("mainOwner",{pageTitle:"הוספת בעלים"});
 });
