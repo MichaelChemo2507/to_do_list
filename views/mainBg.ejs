@@ -1,0 +1,12 @@
+<%- include("page_top.ejs")%>
+<main>
+    <div class="wrapper">
+        <%- include("bg_table.ejs")%>
+        <form method="post" action="http://localhost:2506/images/upload" enctype="multipart/form-data">
+            <input type="file" name="file">
+           <button>sned</button>
+        </form>
+    </div>
+</main>
+<script src="/main-bg.js"></script>
+<%- include("page_bottom.ejs")%>

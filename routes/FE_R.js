@@ -12,3 +12,6 @@ router.get('/Tasks',(req,res)=> {
 router.get('/owner',(req,res)=> {
     res.render("mainOwner",{pageTitle:"הוספת בעלים"});
 });
+router.get('/bg',(req,res)=> {
+    res.render("mainBg",{pageTitle:"ניהול צבעים"});
+});
