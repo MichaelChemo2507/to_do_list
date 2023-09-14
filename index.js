@@ -20,14 +20,15 @@ const owner_rtr = require('./routes/owner_R');
 app.use('/owner',owner_rtr);
 const front_rtr = require('./routes/FE_R');
 app.use('/front',front_rtr);
-
+const bg_rtr = require('./routes/bg_R');
+app.use('/bg',bg_rtr);
+const images_rtr = require('./routes/img_R');
+app.use('/images',images_rtr);
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "css")));
 app.use(express.static(path.join(__dirname, "js")));
 app.set("view engine","ejs");
-
-
 
 app.listen(port,()=>{
     console.log(`now listening on port ${port} http://localhost:2506/`);

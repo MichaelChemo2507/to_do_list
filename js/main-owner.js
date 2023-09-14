@@ -33,7 +33,7 @@ async function deleteLine(index) {
     });
     fetchText()
 }
-async function updateLine(index) {
+function updateLine(index) {
     document.getElementById("tasksForm").action = `http://localhost:2506/owner/Update/${index}`;
     fetchText();
 }
